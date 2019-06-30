@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sleep In</title>
+
+<script>
+/* Input: User presses button
+ * Processing: Determine if it is a holiday, weekday, or weekend.
+ * Output: Display to the user if they can sleep in or need to get up.
+ */
+
+function sleep() {
+    // Using the date from the computer
+    var now = new Date();
+    var month = now.getMonth();
+    var dayOfMonth = now.getDate();
+    var dayOfWeek = now.getDay();
+
+    // Display message.
+    var message;
+    //New Years 
+    if (month == 0 && dayOfMonth == 1) {
+       message = "Sleep in";
+    }
+    //Fourth of July 
+    else if (month == 6 && dayOfMonth == 4) {
+       message = "Sleep in";
+    }
+    //Christmas 
+    else if (month = 11 && dayOfMonth == 25) {
+       message = "Sleep in";
+    }
+    else if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+        message = "Get up!" ;
+    }
+    else {
+        message = "Sleep in";
+    }
+
+    // Display the message to the user.
+    document.getElementById('sleepDiv').innerHTML = message;
+}
+</script>
+</head>
+
+<body>                      
+Press button to determine if you can sleep in today.
+<button type="button" onclick="sleep()">Can I sleep in today?</button>
+<div id="sleepDiv"></div>              
+</body>         
+</html>
